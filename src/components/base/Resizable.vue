@@ -1,20 +1,12 @@
 <template>
-  <div
-    class="resizable-container"
-    :class="{active}"
-    :style="realStyle"
-  >
-    <slot>
-    </slot>
+  <div class="resizable-container" :class="{ active }" :style="realStyle">
+    <slot> </slot>
     <div
       v-if="isResizable"
       class="resizer-element"
       @mousedown.prevent="initResize"
     >
-      <i
-        class="fa fa-arrows-alt"
-        aria-hidden="true"
-      ></i>
+      <i class="fa fa-arrows-alt" aria-hidden="true"></i>
     </div>
   </div>
 </template>

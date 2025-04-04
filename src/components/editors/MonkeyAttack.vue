@@ -1,26 +1,15 @@
 <template>
   <div class="monkey-attack-editor">
-    <AttackBuilder
-      @run="run"
-      @stop="stop"
-      v-bind="{attack, isUnderAttack}"
-    />
+    <AttackBuilder @run="run" @stop="stop" v-bind="{ attack, isUnderAttack }" />
 
-    <div
-      class="attack-cleaner"
-      v-if="attacks.length!==0"
-    >
-      <button
-        type="button"
-        @click.prevent="clear"
-        v-tooltip.bottom="'Clear'"
-      >
+    <div class="attack-cleaner" v-if="attacks.length !== 0">
+      <button type="button" @click.prevent="clear" v-tooltip.bottom="'Clear'">
         <i class="fa fa-times-circle"></i>
       </button>
     </div>
 
     <AttackResult
-      v-for="(result,idx) in attacks"
+      v-for="(result, idx) in attacks"
       :key="idx"
       :result="result"
       @reUse="reUse"

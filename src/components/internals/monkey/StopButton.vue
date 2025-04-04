@@ -1,10 +1,7 @@
 <template>
   <button class="stop-button">
     <div class="stop-root">
-      <i
-        class="fa fa-stop"
-        aria-hidden="true"
-      ></i>
+      <i class="fa fa-stop" aria-hidden="true"></i>
 
       <div>
         stop

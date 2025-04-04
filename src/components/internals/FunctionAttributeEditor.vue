@@ -1,6 +1,6 @@
 <template>
   <input
-    :id="'attribute-'+attribute"
+    :id="'attribute-' + attribute"
     v-model="textValue"
     class="form-control"
   />

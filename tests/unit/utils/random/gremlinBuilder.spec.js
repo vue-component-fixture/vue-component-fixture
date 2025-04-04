@@ -257,15 +257,15 @@ describe("createGremlins", () => {
         }
       );
 
-      test.each([[0, "method1"], [1, "method2"]])(
-        "that log the information",
-        (index, name) => {
-          methodsGremlins[index]();
+      test.each([
+        [0, "method1"],
+        [1, "method2"]
+      ])("that log the information", (index, name) => {
+        methodsGremlins[index]();
 
-          expect(log).toHaveBeenCalledTimes(1);
-          expect(log).toHaveBeenCalledWith(`calling ${name} method`);
-        }
-      );
+        expect(log).toHaveBeenCalledTimes(1);
+        expect(log).toHaveBeenCalledWith(`calling ${name} method`);
+      });
 
       test.each([0, 1])(
         "that when called on gremlins methods %d calls onGremlin",
@@ -379,7 +379,10 @@ describe("createGremlins", () => {
       }
     );
 
-    test.each([[true, [1]], [false, [0]]])(
+    test.each([
+      [true, [1]],
+      [false, [0]]
+    ])(
       "by adding distribution that adjust when there is no gremlins",
       (mouseEvents, expected) => {
         option.clickProbability = 0.5;

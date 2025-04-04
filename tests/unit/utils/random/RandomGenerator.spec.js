@@ -48,10 +48,16 @@ describe("RandomGenerator", () => {
     [["String"], ["String"]],
     [["Number"], ["Number"]],
     [["Boolean"], ["Boolean"]],
-    [["Boolean", "String", "Number"], ["Boolean", "String", "Number"]],
+    [
+      ["Boolean", "String", "Number"],
+      ["Boolean", "String", "Number"]
+    ],
     [["String", "Object"], ["String"]],
     [["Number", "Function"], ["Number"]],
-    [["Boolean", "String", "Number", "Object"], ["Boolean", "String", "Number"]]
+    [
+      ["Boolean", "String", "Number", "Object"],
+      ["Boolean", "String", "Number"]
+    ]
   ])("getRandomTypes receiving %o returns %o", (argument, expected) => {
     const actual = randomGenerator.getRandomTypes(argument);
     expect(actual).toEqual(expected);

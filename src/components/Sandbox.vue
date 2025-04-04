@@ -1,18 +1,20 @@
 <template>
   <div class="root">
     <div class="component__container">
-      <div
-        class="component__content"
-        :class="{ 'editor-closed': !showEditor }"
-      >
-        <component-fixture  ref="fixture" v-bind="$attrs" :isResizable="isResizable" @success="success">
+      <div class="component__content" :class="{ 'editor-closed': !showEditor }">
+        <component-fixture
+          ref="fixture"
+          v-bind="$attrs"
+          :isResizable="isResizable"
+          @success="success"
+        >
           <!-- Use the default slot to manipulate the component under test -->
-          <template v-slot:header="{componentName, update, resetAllProps}">
+          <template v-slot:header="{ componentName, update, resetAllProps }">
             <FixtureHeader
               @toggle="showEditor = !showEditor"
               @resize="isResizable = !isResizable"
               @success="success"
-              v-bind="{componentName, update, isResizable, resetAllProps}"
+              v-bind="{ componentName, update, isResizable, resetAllProps }"
             />
           </template>
 

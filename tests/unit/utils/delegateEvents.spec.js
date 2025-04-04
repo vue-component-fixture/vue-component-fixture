@@ -10,16 +10,17 @@ describe("delegateEvents", () => {
     }
   );
 
-  test.each([["a", 0], ["b", { value: true }], ["c", "arguments"]])(
-    "create method %s that emit the passed argument %o",
-    (method, value) => {
-      const res = delegateEvents(["a", "b", "c"]);
-      const fake = {
-        $emit: jest.fn()
-      };
-      res[method].call(fake, value);
+  test.each([
+    ["a", 0],
+    ["b", { value: true }],
+    ["c", "arguments"]
+  ])("create method %s that emit the passed argument %o", (method, value) => {
+    const res = delegateEvents(["a", "b", "c"]);
+    const fake = {
+      $emit: jest.fn()
+    };
+    res[method].call(fake, value);
 
-      expect(fake.$emit).toHaveBeenCalledWith(method, value);
-    }
-  );
+    expect(fake.$emit).toHaveBeenCalledWith(method, value);
+  });
 });

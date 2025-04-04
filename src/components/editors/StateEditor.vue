@@ -1,15 +1,8 @@
 <template>
   <div>
-    <InformationDisplayer
-      :data="data"
-      label="data"
-    />
+    <InformationDisplayer :data="data" label="data" />
 
-    <InformationDisplayer
-      :data="computed"
-      label="computed"
-    />
-
+    <InformationDisplayer :data="computed" label="computed" />
   </div>
 </template>
 <script>

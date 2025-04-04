@@ -1,6 +1,6 @@
 <template>
   <div>
-    <template v-if="props.length>0">
+    <template v-if="props.length > 0">
       <attributeEditor
         v-for="prop in props"
         :key="prop.key"
@@ -13,11 +13,7 @@
       />
     </template>
 
-    <div
-      class="no-info"
-      v-else
-    >No props detected.
-    </div>
+    <div class="no-info" v-else>No props detected.</div>
   </div>
 </template>
 <script>

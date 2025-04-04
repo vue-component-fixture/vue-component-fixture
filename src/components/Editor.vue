@@ -2,11 +2,10 @@
   <div class="main-editor-component-fixture">
     <div class="card card-options">
       <div class="card-body show-options">
-
         <button
           type="button"
           class="segment"
-          :class="{'active': segmentActive === 'props'}"
+          :class="{ active: segmentActive === 'props' }"
           @click="toggleSegment('props')"
         >
           <span>Props</span>
@@ -15,40 +14,47 @@
         <button
           type="button"
           class="segment segment-events"
-          :class="{'active': segmentActive === 'events'}"
+          :class="{ active: segmentActive === 'events' }"
           @click="toggleSegment('events')"
         >
           <span>Events</span>
-          <span
-            class="badge"
-            v-if="events.length>0"
-          >{{ events.length }}</span>
+          <span class="badge" v-if="events.length > 0">{{
+            events.length
+          }}</span>
         </button>
 
         <button
-          v-for="name in ['methods','state','monkey']"
+          v-for="name in ['methods', 'state', 'monkey']"
           :key="name"
           type="button"
           class="segment"
-          :class="{'active': segmentActive === name}"
+          :class="{ active: segmentActive === name }"
           @click="toggleSegment(name)"
         >
-          <span>{{name}}</span>
+          <span>{{ name }}</span>
         </button>
-
       </div>
     </div>
 
-      <keep-alive>
-        <component
-          :is="`${segmentActive}-editor`"
-          :key="segmentActive"
-          v-bind="{props, events, methods, attributes, data, computed, clearEvents, getUnderTestComponent}"
-          @success="success"
-          @error="error"
-          @changed="changed"
-        />
-      </keep-alive>
+    <keep-alive>
+      <component
+        :is="`${segmentActive}-editor`"
+        :key="segmentActive"
+        v-bind="{
+          props,
+          events,
+          methods,
+          attributes,
+          data,
+          computed,
+          clearEvents,
+          getUnderTestComponent
+        }"
+        @success="success"
+        @error="error"
+        @changed="changed"
+      />
+    </keep-alive>
   </div>
 </template>
 <script>
@@ -244,4 +250,4 @@ export default {
   }
 }
 </style>
-<style lang="less" src="@/styles/bootstrap-ligth.less"/>
+<style lang="less" src="@/styles/bootstrap-ligth.less" />

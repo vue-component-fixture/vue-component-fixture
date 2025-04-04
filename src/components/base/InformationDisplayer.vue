@@ -1,16 +1,9 @@
 <template>
   <div>
-    <h1>{{label}}</h1>
-    <ObjectDisplayer
-      v-if="hasData"
-      :data="data"
-    />
+    <h1>{{ label }}</h1>
+    <ObjectDisplayer v-if="hasData" :data="data" />
 
-    <div
-      class="no-info"
-      v-else
-    >No {{label}} detected.
-    </div>
+    <div class="no-info" v-else>No {{ label }} detected.</div>
   </div>
 </template>
 <script>

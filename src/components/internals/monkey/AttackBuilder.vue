@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="attack-builder"
-  >
+  <div class="attack-builder">
     <h1>
       Monkey test builder
     </h1>
@@ -9,10 +7,7 @@
     <div class="seed">
       <label class="main">Seed</label>
       <label>Random</label>
-      <input
-        type="checkbox"
-        v-model="attack.generateSeed"
-      />
+      <input type="checkbox" v-model="attack.generateSeed" />
       <input
         class="main form-control component-input"
         v-model.number="attack.seed"
@@ -22,7 +17,7 @@
 
     <div class="attack">
       <label class="main">Delay (ms)</label>
-      <span>{{attack.delay}}</span>
+      <span>{{ attack.delay }}</span>
       <input
         class="main form-control component-input"
         type="range"
@@ -35,7 +30,7 @@
 
     <div class="attack">
       <label class="main">Attack number</label>
-      <span>{{attack.maxOperation}}</span>
+      <span>{{ attack.maxOperation }}</span>
       <input
         class="main form-control component-input"
         type="range"
@@ -47,7 +42,6 @@
     </div>
 
     <div class="others">
-
       <div>
         <label class="main">Mouse events</label>
         <input
@@ -80,7 +74,6 @@
     </div>
 
     <div class="actions">
-
       <MonkeyButton
         v-show="!isUnderAttack"
         :disabled="isUnderAttack"
@@ -88,13 +81,8 @@
         @click.native="$emit('run')"
       />
 
-      <StopButton
-        v-show="isUnderAttack"
-        @click.native="$emit('stop')"
-      />
-
+      <StopButton v-show="isUnderAttack" @click.native="$emit('stop')" />
     </div>
-
   </div>
 </template>
 <script>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      v-if="orderedMethods.length>0"
+      v-if="orderedMethods.length > 0"
       class="methods"
       role="group"
       aria-label="methods"
@@ -15,13 +15,12 @@
           @click="executeMethod(method)"
           type="button"
           class="btn btn-primary"
-        >{{method.name}}</button>
+        >
+          {{ method.name }}
+        </button>
       </div>
     </div>
-    <div
-      class="no-info"
-      v-else
-    >No methods without argument detected.</div>
+    <div class="no-info" v-else>No methods without argument detected.</div>
   </div>
 </template>
 <script>

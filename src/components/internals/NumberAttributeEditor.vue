@@ -2,34 +2,27 @@
   <div class="main-control">
     <div class="ranges">
       <div class="input-control">
-        <input
-          class="range min"
-          v-model.number="min"
-        >
-        <input
-          class="range max"
-          v-model.number="max"
-        >
+        <input class="range min" v-model.number="min" />
+        <input class="range max" v-model.number="max" />
       </div>
       <div class="inputs">
-
         <input
           :min="min"
           :max="max"
           type="range"
-          :id="'attribute-'+attribute"
+          :id="'attribute-' + attribute"
           v-model="textValue"
           class="range form-control"
-        >
+        />
       </div>
     </div>
 
     <div class="for-value">
       <input
         class="value-holder form-control"
-        :id="'attribute-2-'+attribute"
+        :id="'attribute-2-' + attribute"
         v-model="textValue"
-      >
+      />
     </div>
   </div>
 </template>

@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="attack-result"
-    :class="status"
-  >
+  <div class="attack-result" :class="status">
     <svg
       version="1.1"
       baseProfile="full"
@@ -20,15 +17,11 @@
         stroke-width="6"
         stroke-linecap="round"
       />
-
     </svg>
 
     <div class="attack-sum-up">
       <div class="status">
-        <h1
-          class="main-feedback"
-          :class="status"
-        >{{status}}</h1>
+        <h1 class="main-feedback" :class="status">{{ status }}</h1>
         <i
           v-if="stopped"
           :class="status"
@@ -43,43 +36,27 @@
         @click="reUse"
         v-tooltip.left="'Use parameter for new attack'"
       >
-        <i
-          class="fa fa-recycle"
-          aria-hidden="true"
-        ></i>
+        <i class="fa fa-recycle" aria-hidden="true"></i>
       </button>
     </div>
 
     <div class="attack-type">
-      <p><b>Seed: </b>{{result.seed}}</p>
-      <p><b>Operations: </b>{{result.maxOperation}}</p>
-      <p><b>Delay: </b>{{result.delay}}</p>
-      <p><b>Mouse events used: </b>{{result.mouseEvents? 'yes' : 'no'}}</p>
-      <p><b>Methods used: </b>{{result.includeMethod? 'yes' : 'no'}}</p>
+      <p><b>Seed: </b>{{ result.seed }}</p>
+      <p><b>Operations: </b>{{ result.maxOperation }}</p>
+      <p><b>Delay: </b>{{ result.delay }}</p>
+      <p><b>Mouse events used: </b>{{ result.mouseEvents ? "yes" : "no" }}</p>
+      <p><b>Methods used: </b>{{ result.includeMethod ? "yes" : "no" }}</p>
     </div>
     <div class="attack-results">
-      <FpsFeedback
-        :value="minFps"
-        text="Min fps"
-        :min="minimunAcceptableFps"
-      />
+      <FpsFeedback :value="minFps" text="Min fps" :min="minimunAcceptableFps" />
 
-      <FpsFeedback
-        :value="maxFps"
-        text="Max fps"
-        :min="minimunAcceptableFps"
-      />
-
+      <FpsFeedback :value="maxFps" text="Max fps" :min="minimunAcceptableFps" />
     </div>
-    <div
-      v-if="showProblems"
-      class="problems"
-    >
-      <div><b>Problems ({{problems.length}}):</b></div>
-      <div
-        v-for="(problem,idx) in problems"
-        :key="idx"
-      >{{problem}}</div>
+    <div v-if="showProblems" class="problems">
+      <div>
+        <b>Problems ({{ problems.length }}):</b>
+      </div>
+      <div v-for="(problem, idx) in problems" :key="idx">{{ problem }}</div>
     </div>
   </div>
 </template>

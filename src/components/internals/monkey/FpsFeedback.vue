@@ -1,7 +1,7 @@
 <template>
   <div>
-    <b>{{text}}: </b>
-    {{value| decimal}}
+    <b>{{ text }}: </b>
+    {{ value | decimal }}
     <i
       v-if="isWarning"
       class="fa fa-exclamation-triangle"

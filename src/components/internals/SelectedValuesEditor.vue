@@ -1,13 +1,7 @@
 <template>
-  <select
-    v-model="textValue"
-    class="form-control"
-  >
-    <option
-      v-for="(v, idx) in metaData.possibleValues"
-      :key="idx"
-    >
-      {{v}}
+  <select v-model="textValue" class="form-control">
+    <option v-for="(v, idx) in metaData.possibleValues" :key="idx">
+      {{ v }}
     </option>
   </select>
 </template>

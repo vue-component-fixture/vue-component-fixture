@@ -6,12 +6,8 @@
       :id="id"
       :checked="value"
       @change.prevent="changed"
-    >
-    <label
-      class="custom-control-label"
-      :for="id"
-    ></label>
-
+    />
+    <label class="custom-control-label" :for="id"></label>
   </div>
 </template>
 <script>

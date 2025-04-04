@@ -48,8 +48,14 @@ describe("getTypeForProp", () => {
     [Number, ["Number"]],
     [Object, ["Object"]],
     [Array, ["Array"]],
-    [[Object, String], ["Object", "String"]],
-    [[Object, String, Boolean], ["Object", "String", "Boolean"]]
+    [
+      [Object, String],
+      ["Object", "String"]
+    ],
+    [
+      [Object, String, Boolean],
+      ["Object", "String", "Boolean"]
+    ]
   ];
 
   test.each(typesFromPropType)(

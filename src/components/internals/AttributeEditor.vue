@@ -1,75 +1,47 @@
 <template>
-  <div
-    class="main"
-    :class="{'is-invalid':!valid, 'is-dirty':dirty}"
-  >
-
+  <div class="main" :class="{ 'is-invalid': !valid, 'is-dirty': dirty }">
     <div class="main-info-block">
       <div
         class="badge type-descriptor"
-        v-tooltip="{content:type,placement:'bottom'}"
-        :class="{[badge]:true,'multi-option':!monoOption}"
+        v-tooltip="{ content: type, placement: 'bottom' }"
+        :class="{ [badge]: true, 'multi-option': !monoOption }"
       >
-        <template v-if="monoOption">{{convert(type)}}</template>
+        <template v-if="monoOption">{{ convert(type) }}</template>
 
         <template v-else>
-          <select
-            v-model="type"
-            class="type-select"
-          >
+          <select v-model="type" class="type-select">
             <option
               v-for="typeDescription in avalaibleTypes"
               :value="typeDescription.value"
               :key="typeDescription.value"
             >
               <template v-if="typeDescription.value === type">
-                {{typeDescription.display}}
+                {{ typeDescription.display }}
               </template>
               <template v-else>
-                {{typeDescription.value}}
+                {{ typeDescription.value }}
               </template>
-
             </option>
           </select>
         </template>
       </div>
 
       <div>
-        <h1 class="label">{{attribute}}</h1>
+        <h1 class="label">{{ attribute }}</h1>
       </div>
 
       <div class="btn-group actions">
-
-        <div
-          class="prop-info"
-          v-if="metaData.definition.required"
-        >
-          <i
-            class="fa fa-exclamation-triangle"
-            v-tooltip.bottom="'required'"
-          />
+        <div class="prop-info" v-if="metaData.definition.required">
+          <i class="fa fa-exclamation-triangle" v-tooltip.bottom="'required'" />
         </div>
 
-        <div
-          class="prop-info"
-          v-if="metaData.isModel"
-        >
-          <i
-            class="fa fa-arrows-h"
-            v-tooltip.bottom="'v-model'"
-          />
+        <div class="prop-info" v-if="metaData.isModel">
+          <i class="fa fa-arrows-h" v-tooltip.bottom="'v-model'" />
         </div>
 
-        <div
-          class="prop-info"
-          v-if="metaData.definition.validator"
-        >
-          <i
-            class="fa fa-lock"
-            v-tooltip.bottom="'has validator'"
-          />
+        <div class="prop-info" v-if="metaData.definition.validator">
+          <i class="fa fa-lock" v-tooltip.bottom="'has validator'" />
         </div>
-
       </div>
     </div>
 
@@ -80,7 +52,7 @@
         class="component-input"
         @error="onError"
         @changed="changed"
-        v-bind="{attribute, metaData, types, value}"
+        v-bind="{ attribute, metaData, types, value }"
       />
 
       <button
@@ -94,9 +66,8 @@
         <i class="fa fa-home" />
       </button>
     </div>
-
   </div>
-</template> 
+</template>
 <script>
 import jsonAttributeEditor from "./JsonAttributeEditor";
 import functionAttributeEditor from "./FunctionAttributeEditor";

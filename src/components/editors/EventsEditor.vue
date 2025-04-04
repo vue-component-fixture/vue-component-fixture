@@ -1,31 +1,24 @@
 <template>
   <div>
-
     <div class="no-info-events">
       <button
         type="button"
-        :disabled="events.length===0"
+        :disabled="events.length === 0"
         @click.prevent="clear"
         v-tooltip.bottom="'Clear'"
       >
         <i class="fa fa-times-circle"></i>
       </button>
-      <div v-if="events.length===0">No
-        events to display.
-      </div>
+      <div v-if="events.length === 0">No events to display.</div>
     </div>
 
-    <div
-      class="events"
-      v-if="events.length>0"
-    >
+    <div class="events" v-if="events.length > 0">
       <eventDisplayer
         v-for="(event, idx) in events"
         :key="idx"
         :event="event"
       />
     </div>
-
   </div>
 </template>
 <script>

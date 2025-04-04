@@ -57,7 +57,10 @@ describe.each([
 
   test.each([
     [{ a: 1 }, { a: 1 }],
-    [{ a: 1, b: "abcde" }, { a: 1, b: "abcde" }]
+    [
+      { a: 1, b: "abcde" },
+      { a: 1, b: "abcde" }
+    ]
   ])("buildStoreModule for %o should return state: %o", (state, expected) => {
     callRegisterModule({ state });
     const moduleState = getRegisteredModule($store).state();

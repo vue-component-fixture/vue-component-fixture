@@ -6,15 +6,12 @@
   >
     <template v-slot:header>
       <div class="event-header">
-        <span>{{event.name}}</span>
-        <span class="badge badge-light">{{event.instant | date}}</span>
+        <span>{{ event.name }}</span>
+        <span class="badge badge-light">{{ event.instant | date }}</span>
       </div>
     </template>
     <ul class="list-group list-group-flush">
-      <li
-        v-for="(arg,idx) in event.args"
-        :key="idx"
-      >
+      <li v-for="(arg, idx) in event.args" :key="idx">
         <ObjectDisplayer :data="arg" />
       </li>
     </ul>

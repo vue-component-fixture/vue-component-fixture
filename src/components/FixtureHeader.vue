@@ -8,20 +8,17 @@
       >
         <i class="fa fa-bars"></i>
       </button>
-      <h4 class="component__title">{{componentName}}</h4>
+      <h4 class="component__title">{{ componentName }}</h4>
     </div>
 
     <div class="controls end">
       <button
         class="btn btn--resize"
-        :class="{not: !isResizable}"
+        :class="{ not: !isResizable }"
         @click="toogleResize"
         v-tooltip.left="resizeText"
       >
-        <i
-          class="fa fa-expand"
-          aria-hidden="true"
-        ></i>
+        <i class="fa fa-expand" aria-hidden="true"></i>
       </button>
 
       <button
@@ -29,21 +26,15 @@
         @click="executeUpdate"
         v-tooltip.left="'Force component update'"
       >
-        <i
-          class="fa fa-refresh"
-          aria-hidden="true"
-        ></i>
+        <i class="fa fa-refresh" aria-hidden="true"></i>
       </button>
 
-            <button
+      <button
         class="btn"
         @click="resetProps"
         v-tooltip.left="'Reset all props'"
       >
-        <i
-          class="fa fa-power-off"
-          aria-hidden="true"
-        ></i>
+        <i class="fa fa-power-off" aria-hidden="true"></i>
       </button>
     </div>
   </div>

@@ -1,29 +1,23 @@
 <template>
   <div class="card">
-    <div
-      class="card-header expander"
-      :style="headerStyle"
-    >
+    <div class="card-header expander" :style="headerStyle">
       <button
         class="btn expander-button"
         aria-expanded="false"
-        :class="{ collapsed: collapse}"
+        :class="{ collapsed: collapse }"
         type="button"
-        @click="collapse=!collapse"
+        @click="collapse = !collapse"
       >
         <div class="expander-header">
           <i class="fa fa-caret-down expander-icon"></i>
           <slot name="header">
-            <strong>{{title}}</strong>
+            <strong>{{ title }}</strong>
           </slot>
         </div>
       </button>
     </div>
 
-    <div
-      class="collapse"
-      :class="{ show: !collapse}"
-    >
+    <div class="collapse" :class="{ show: !collapse }">
       <div class="card-body">
         <slot></slot>
       </div>

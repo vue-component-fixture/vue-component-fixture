@@ -685,7 +685,9 @@ describe("ComponentFixture.vue", () => {
       it("listens to event tracked by v-model and commit changes", () => {
         const testVm = vm.$children[0];
         testVm.$emit("input", [1, 2, 3]);
-        expect(store.commit).toHaveBeenCalledWith(
+        expect(
+          store.commit
+        ).toHaveBeenCalledWith(
           `componentFixture-fake-component-vmodel-${vm.id}/updateValue`,
           [1, 2, 3]
         );
